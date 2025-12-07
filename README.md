@@ -1,4 +1,4 @@
-![image alt](https://github.com/Pls8/testingOnly/blob/main/repoCoverDOtNet_00000.jpg?raw=true)
+![image alt](https://github.com/Pls8/DoTNET/blob/master/repoCoverDOtNet_00000.jpg?raw=true)
 
 ## ASP.NET MVC Application
 
