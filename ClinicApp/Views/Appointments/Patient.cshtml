@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ClinicApp.Models.AppointmentClass>
+
+<h2>Patient Appointments</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Doctor</th>
+        <th>Date</th>
+    </tr>
+
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.AppointmentId</td>
+            <td>@a.Doctor.Name</td>
+            <td>@a.Date.ToString("yyyy-MM-dd HH:mm")</td>
+        </tr>
+    }
+</table>

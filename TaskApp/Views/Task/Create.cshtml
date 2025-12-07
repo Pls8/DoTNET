@@ -1,0 +1,28 @@
+﻿@model TaskClass
+
+<h2>Create Task</h2>
+
+<form method="post">
+    <div>
+        <label>Title:</label>
+        <input asp-for="Name" required />
+    </div>
+
+    <div>
+        <label>Deadline:</label>
+        <input asp-for="DeadLine" type="date" required />
+    </div>
+
+    <div>
+        <label>Category:</label>
+        <select asp-for="CategoryId">
+            @foreach (var cat in ViewBag.Categories)
+            {
+                <option value="@cat.Id">@cat.Name</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit">Create</button>
+    <a href="/Task">Cancel</a>
+</form>

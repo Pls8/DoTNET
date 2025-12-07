@@ -1,0 +1,16 @@
+﻿@model List<TaskCategoryClass>
+
+<h2>Categories</h2>
+
+<a href="/Category/Create">Add New Category</a> |
+<a href="/Task">View Tasks</a>
+
+<ul>
+    @foreach (var category in Model)
+    {
+        <li>
+            @category.Name
+            <a href="/Category/Delete/@category.Id">[Delete]</a>
+        </li>
+    }
+</ul>

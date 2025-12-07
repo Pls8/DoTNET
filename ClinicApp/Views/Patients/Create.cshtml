@@ -1,0 +1,13 @@
+﻿@model ClinicApp.Models.PatientClass
+
+<h2>Register Patient</h2>
+
+<form asp-action="Create" method="post">
+    <label>Name</label>
+    <input class="form-control" asp-for="Name" />
+
+    <label>Phone</label>
+    <input class="form-control" asp-for="Phone" />
+
+    <button class="btn btn-success mt-3" type="submit">Save</button>
+</form>

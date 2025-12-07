@@ -1,0 +1,27 @@
+﻿@model List<TaskClass>
+
+<h2>Tasks</h2>
+
+<a href="/Task/Create">Add New Task</a> |
+<a href="/Category">View Categories</a>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Title</th>
+        <th>Deadline</th>
+        <th>Category</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var task in Model)
+    {
+        <tr>
+            <td>@task.Name</td>
+            <td>@task.DeadLine.ToString("MM/dd/yyyy")</td>
+            <td>@task.Category?.Name</td>
+            <td>
+                <a href="/Task/Delete/@task.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

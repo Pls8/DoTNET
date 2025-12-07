@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ClinicApp.Models.DoctorClass>
+
+<h2>Doctors</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">Register Doctor</a>
+<a class="btn btn-secondary mb-3" asp-action="Search">Search by Specialty</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Specialty</th>
+    </tr>
+
+    @foreach (var d in Model)
+    {
+        <tr>
+            <td>@d.DoctorId</td>
+            <td>@d.Name</td>
+            <td>@d.Specialty</td>
+        </tr>
+    }
+</table>

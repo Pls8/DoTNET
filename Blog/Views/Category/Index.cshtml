@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!--to access view URL: Category/Index-->
+<div><h3>This is Category</h3></div>
+@model List<CategoryClass>
+
+@if (Model.Count > 0)
+{
+    <table style="width: 100%; border-collapse: collapse; border: 1px solid #ddd; font-family: Arial, sans-serif;">
+        <thead>
+            <tr style="background-color: #f2f2f2;">
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Name</th>
+                <th style="padding: 12px; text-align: left; border-bottom: 2px solid #ddd;">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;">@item.Name</td>
+                    <td style="padding: 10px;">@item.Description</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div style="padding: 20px; text-align: center; color: #666; font-style: italic;">
+        No Categories Found
+    </div>
+}
+
+
