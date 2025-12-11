@@ -1,0 +1,15 @@
+﻿﻿
+@model TaskCategoryClass
+
+
+<div class="container">
+    <div asp-validation-summary="All"></div>
+    <h2>Create New Category </h2>
+    <form method="post" asp-controller="Category" asp-action="Create">
+        <label class="form-label" asp-for="@Model.Name"> Name</label> <br />
+        <input asp-for="@Model.Name" />
+        <span asp-validation-for="@Model.Name" class="text-danger   "></span><br />
+
+        <input type="submit" value="Create Category" class="btn btn-primary" />
+    </form>
+</div>

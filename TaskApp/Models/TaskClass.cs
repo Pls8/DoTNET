@@ -8,9 +8,11 @@ namespace TaskApp.Models
         public string Name { get; set; }
         public DateTime DeadLine { get; set; }
 
+        //public bool IsComplete { get; set; } = false;
 
         [ForeignKey("Category")]
         public int CategoryId { get; set; }
-        public TaskCategoryClass Category { get; set; }
+        public TaskCategoryClass? Category { get; set; }
+        = null;          //     ^-- this ? mark is VERY Important
     }
 }

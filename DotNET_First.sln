@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog", "Blog\Blog.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskApp", "TaskApp\TaskApp.csproj", "{DA1759C5-1C0D-4B80-8F2D-8922139AAFCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskInClass", "TaskInClass\TaskInClass.csproj", "{DDD35A19-8DF6-40BA-BD6D-C21AC2172280}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DA1759C5-1C0D-4B80-8F2D-8922139AAFCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA1759C5-1C0D-4B80-8F2D-8922139AAFCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA1759C5-1C0D-4B80-8F2D-8922139AAFCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDD35A19-8DF6-40BA-BD6D-C21AC2172280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDD35A19-8DF6-40BA-BD6D-C21AC2172280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDD35A19-8DF6-40BA-BD6D-C21AC2172280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDD35A19-8DF6-40BA-BD6D-C21AC2172280}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

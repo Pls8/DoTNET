@@ -1,0 +1,38 @@
+﻿
+@model TasksClass
+
+<div class="container mt-4">
+    <h2> Task Details</h2>
+
+    <form method="post" asp-controller="Home" asp-action="Create">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label"></label>
+            <input disabled asp-for="Name" class="form-control" />
+            
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label"></label>
+            <input disabled asp-for="Description" class="form-control" />
+            
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Deadline" class="form-label"></label>
+            <input disabled asp-for="Deadline" type="datetime-local" class="form-control" />
+            
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="TaskCategoryId" class="form-label">Category</label>
+            <select asp-for="TaskCategoryId" disabled  class="form-select">
+                <option value="@Model.taskCategory.Id">@Model.taskCategory.Name</option>
+            </select>
+            
+        </div>
+
+        <button type="submit" class="btn btn-secondary" asp-action="index" >Back</button>
+    </form>
+</div>

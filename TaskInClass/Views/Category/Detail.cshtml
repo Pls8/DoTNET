@@ -1,0 +1,13 @@
+﻿@model TaskCategoryClass
+
+@if(Model is not null)
+{
+    <div class="container d-flex flex-column">
+        <h3>@Model.Name</h3>
+        <p>@Model.CreatedAt</p>
+    </div>
+}
+else
+{
+    <h3 class="alert alert-warning"> No Category Found</h3>
+}

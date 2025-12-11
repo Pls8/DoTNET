@@ -38,9 +38,14 @@ namespace TaskApp.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(TaskCategoryClass category)
         {
-            _context.Categories.Add(category);
-            await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                _context.Categories.Add(category);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }  
+            return View(category);
+
         }
 
         // GET: Delete
@@ -52,6 +57,27 @@ namespace TaskApp.Controllers
                 _context.Categories.Remove(category);
                 await _context.SaveChangesAsync();
             }
+            return RedirectToAction("Index");
+        }
+
+
+        // GET: Edit category
+        public async Task<IActionResult> Edit(int id)
+        {
+            var category = await _context.Categories.FindAsync(id);
+            if (category == null)
+            {
+                return RedirectToAction("Index");
+            }
+            return View(category);
+        }
+
+        // POST: Update category
+        [HttpPost]
+        public async Task<IActionResult> Edit(TaskCategoryClass category)
+        {
+            _context.Categories.Update(category);
+            await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
     }

@@ -1,0 +1,64 @@
+﻿@model List<TaskCategoryClass>
+
+<div class=" d-flex justify-content-around align-items-center ">
+    <h3>All Categories </h3>
+    <a class="btn btn-primary " asp-controller="Category" asp-action="Create">Create Category</a>
+</div>
+
+@if (Model.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    category id
+                </th>
+                <th>
+                    Category Name
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td><a class="btn btn-primary" asp-controller="Category" asp-action="Detail" asp-route-Id="@item.Id">ViewDetails</a> </td>
+                    <td><a class="btn btn-warning" asp-controller="Category" asp-action="Update" asp-route-Id="@item.Id">update</a> </td>
+                    <td>
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            Delete
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        are You sure you want to    Delete @item.Name Category ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <a type="button" class="btn btn-danger" asp-controller="Category" asp-action="Delete" asp-route-Id="@item.Id">Yes i am sure </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @* <a class="btn btn-danger" asp-controller="Category" asp-action="Delete" asp-route-Id="@item.Id">Delete</a>  *@
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <h3 class="alert alert-warning">No Categories  Yet</h3>
+}

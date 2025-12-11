@@ -36,7 +36,7 @@ namespace TaskApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("TaskApp.Models.TaskClass", b =>
@@ -61,7 +61,7 @@ namespace TaskApp.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Tasks");
+                    b.ToTable("Tasks", (string)null);
                 });
 
             modelBuilder.Entity("TaskApp.Models.TaskClass", b =>
