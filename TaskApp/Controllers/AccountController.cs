@@ -10,6 +10,7 @@ namespace TaskApp.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
 
+        //ctor
         public AccountController(
             UserManager<AppUser> userManager,
             SignInManager<AppUser> signInManager)
@@ -27,7 +28,7 @@ namespace TaskApp.Controllers
 
         // POST: /Account/Register
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken] //Cross-site request forgery (CSRF)
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
@@ -79,13 +80,18 @@ namespace TaskApp.Controllers
         [HttpGet]
         public IActionResult Login(string? returnUrl = null)
         {
-            ViewData["ReturnUrl"] = returnUrl;
+            ViewData["ReturnUrl"] = returnUrl; // The returnUrl parameter keeps track of the URL the user originally tried to visit.
             return View();
         }
 
         // POST: /Account/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
+        //CSRF attacks exploit the trust that a web application has in the user's browser.
+        //The attacker can trick the user into submitting a form (like a change of password
+        //or a financial transaction) without the user knowing.
+        //The anti-forgery token ensures that only requests initiated from your site are valid,
+        //blocking attackers from submitting forged requests from external sites.
         public async Task<IActionResult> Login(LoginViewModel model, string? returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;

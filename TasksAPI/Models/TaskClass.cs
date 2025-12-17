@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using TaskApp.Models.AuthModel;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TaskApp.Models
+namespace TasksAPI.Models
 {
     public class TaskClass
     {
@@ -16,12 +14,5 @@ namespace TaskApp.Models
         public int CategoryId { get; set; }
         public TaskCategoryClass? Category { get; set; }
         = null;          //     ^-- this ? mark is VERY Important
-
-        // ===== NEW: Foreign Key to User =====
-        [ForeignKey(nameof(User))]
-        public string? UserId { get; set; }        
-        public virtual AppUser? User { get; set; }
-        //      ^-- No Need !!
-
     }
 }
