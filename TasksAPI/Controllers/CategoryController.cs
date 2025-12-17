@@ -24,6 +24,7 @@ namespace TasksAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         //public async Task<ActionResult<List<TaskCategoryClass>>> GetCategories()
         //{
         //    var catg = await _db.Categories.ToListAsync();
@@ -53,7 +54,8 @@ namespace TasksAPI.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> CreateCategory(TaskCategoryClass category)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> CreateCategory(TaskCategoryClass category)
         {
             _db.Categories.Add(category);
             await _db.SaveChangesAsync();
@@ -65,7 +67,8 @@ namespace TasksAPI.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateCategory(int id, TaskCategoryClass category)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> UpdateCategory(int id, TaskCategoryClass category)
         {
             var existing = await _db.Categories.FindAsync(id);
 
@@ -86,7 +89,8 @@ namespace TasksAPI.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> DeleteCategory(int id)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> DeleteCategory(int id)
         {
             var category = await _db.Categories.FindAsync(id);
 

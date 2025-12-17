@@ -28,6 +28,7 @@ namespace TasksAPI.Controllers
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<ActionResult<List<TaskClass>>> GetTasks()  // Changed return type
         {
             var tasks = await _db.Tasks.ToListAsync();  // Added "await" and "Async"
@@ -56,7 +57,8 @@ namespace TasksAPI.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<IActionResult> CreateTask(TaskClass task)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> CreateTask(TaskClass task)
         {
             _db.Tasks.Add(task);
             await _db.SaveChangesAsync();  // Changed to Async
@@ -70,7 +72,8 @@ namespace TasksAPI.Controllers
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> UpdateTask(int id, TaskClass task)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> UpdateTask(int id, TaskClass task)
         {
             var existing = await _db.Tasks.FindAsync(id);  // Changed to Async
 
@@ -86,7 +89,7 @@ namespace TasksAPI.Controllers
         }
         //1.PATCH = Update ONLY specific fields
         [HttpPatch("{id}/complete")]
-        public async Task<IActionResult> MarkTaskComplete(int id)
+        public async Task<ActionResult> MarkTaskComplete(int id)
         {
             var task = await _db.Tasks.FindAsync(id);
 
@@ -120,7 +123,8 @@ namespace TasksAPI.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<IActionResult> DeleteTask(int id)
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult> DeleteTask(int id)
         {
             var task = await _db.Tasks.FindAsync(id);  // Changed to Async
 
