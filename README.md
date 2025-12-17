@@ -567,7 +567,7 @@ var user = await _userManager.GetUserAsync(User);
   - Quick updates (like marking task complete)
   - When you only need to change 1-2 fields
 
-## ** Key Code Examples:**
+## **Key Code Examples:**
 
 ### **Async GET with DTO:**
 ```csharp
@@ -608,7 +608,7 @@ public abstract class BaseController : ControllerBase
 }
 ```
 
-## ** Simple Rules to Remember:**
+## **Simple Rules to Remember:**
 
 1. **For database calls** → Use `Async` methods
 2. **For API responses** → Use `DTOs` to send only needed data
@@ -616,7 +616,7 @@ public abstract class BaseController : ControllerBase
 4. **For partial updates** → Use `PATCH` instead of `PUT`
 5. **Always validate** → Check if data exists before updating/deleting
 
-## ** Quick Comparison:**
+## **Quick Comparison:**
 
 | Operation | HTTP Method | Use When... |
 |-----------|-------------|-------------|
@@ -626,7 +626,7 @@ public abstract class BaseController : ControllerBase
 | **Update Part** | PATCH | Quick changes (1-2 fields) |
 | **Delete** | DELETE | Removing item |
 
-## ** Best Practices Learned:**
+## **Best Practices Learned:**
 
 1. **Keep controllers thin** - Business logic in services
 2. **Use async for I/O operations** - Database, files, API calls
