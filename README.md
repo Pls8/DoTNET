@@ -26,7 +26,7 @@
 
 
 ---
-<br><br>
+![image alt](https://github.com/Pls8/DoTNET/blob/master/Model-isValid_00000.jpg?raw=true)
 ## <p align="right">LOG 2025-12-10</p>
 
 
@@ -286,7 +286,7 @@ var tasks = _context.Tasks
 ---
 
 
-<br><br>
+![image alt](https://github.com/Pls8/DoTNET/blob/master/auth_00000.jpg?raw=true)
 ## <p align="right">LOG 2025-12-14</p>
 # Task Creation Fix - UserId Required Error
 
@@ -520,7 +520,7 @@ var user = await _userManager.GetUserAsync(User);
 
 ---
 
-<br><br>
+![image alt](https://github.com/Pls8/DoTNET/blob/master/api_00000.jpg?raw=true)
 ## <p align="right">LOG 2025-12-17</p>
 
 ### **1. CRUD Operations in Controllers**
